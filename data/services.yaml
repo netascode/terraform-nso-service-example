@@ -1,0 +1,19 @@
+---
+services:
+  vpn:
+    l3vpn:
+      - name: tf-service
+        route_distinguisher: 12121
+        endpoints:
+          - id: main
+            ce_device: ce6
+            ce_interface: GigabitEthernet0/11
+            ip_network: 12.12.12.0/24
+            bandwidth: 50000
+            as_number: 65101
+          - id: branch1
+            ce_device: ce1
+            ce_interface: GigabitEthernet0/12
+            ip_network: 13.13.13.0/24
+            bandwidth: 20000
+            as_number: 65102
