@@ -10,14 +10,12 @@ resource "nso_restconf" "service_mpls_vpn" {
       key  = "id"
       items = [for e in var.endpoints :
         {
-          attributes = {
-            id           = e.id
-            ce-device    = e.ce_device
-            ce-interface = e.ce_interface
-            ip-network   = e.ip_network
-            bandwidth    = e.bandwidth
-            as-number    = e.as_number
-          }
+          id           = e.id
+          ce-device    = e.ce_device
+          ce-interface = e.ce_interface
+          ip-network   = e.ip_network
+          bandwidth    = e.bandwidth
+          as-number    = e.as_number
         }
       ]
     }
